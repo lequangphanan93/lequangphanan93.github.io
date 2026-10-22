@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ytb-pipeline – Tiểu My kể chuyện</title>
+<meta name="description" content="ytb-pipeline: công cụ nội bộ đăng video lên kênh YouTube Tiểu My kể chuyện của chính chủ kênh.">
+<style>
+:root {
+  --bg: #fbf8f3; --card: #ffffff; --ink: #2a2118; --muted: #6b5f52; --line: #e7dfd3; --accent: #b5412b;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1b1714; --card: #24201c; --ink: #f1ebe3; --muted: #b3a797; --line: #3a332c; --accent: #e9846d; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+header { margin-bottom: 28px; }
+header .brand { font-size: 14px; color: var(--muted); letter-spacing: .02em; }
+h1 { font-size: 30px; line-height: 1.25; margin: 6px 0 10px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+h3 { font-size: 16px; margin: 20px 0 4px; }
+p, li { color: var(--ink); }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin: 18px 0; }
+a { color: var(--accent); }
+nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 15px; }
+.lang { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 8px; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+code { font-size: 14px; background: var(--line); padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">Tiểu My kể chuyện · @tieumystory</div>
+    <h1>ytb-pipeline</h1>
+    <p class="muted">Công cụ nội bộ để đăng video lên kênh YouTube của chính chủ kênh.</p>
+    <nav>
+      <a href="privacy.html">Chính sách quyền riêng tư</a>
+      <a href="terms.html">Điều khoản sử dụng</a>
+      <a href="#en">English</a>
+    </nav>
+  </header>
+
+  <h2>ytb-pipeline là gì</h2>
+  <p><strong>ytb-pipeline</strong> là công cụ chạy trên máy tính cá nhân của chủ kênh YouTube
+  <a href="https://www.youtube.com/@tieumystory">Tiểu My kể chuyện</a>. Công cụ giúp chủ kênh làm và đăng các video kiến thức
+  ngắn (Shorts) và video dài do chính họ sản xuất.</p>
+  <p>Công cụ <strong>không</strong> phải một dịch vụ công khai: không có tài khoản người dùng, không có máy chủ, và chỉ được dùng
+  cho kênh của chính chủ kênh.</p>
+
+  <h2>Công cụ dùng tài khoản Google để làm gì</h2>
+  <div class="card">
+    <p>Khi chủ kênh đăng nhập bằng Google và cho phép, công cụ dùng <strong>YouTube Data API</strong> để:</p>
+    <ul>
+      <li>tải lên video mà chủ kênh đã duyệt, kèm tiêu đề, mô tả, thẻ và ảnh bìa;</li>
+      <li>hẹn giờ công khai video vào khung giờ chủ kênh đã chọn;</li>
+      <li>thêm phụ đề tiếng Việt (<code>captions.srt</code>) và một bình luận của chính chủ kênh vào video;</li>
+      <li>đọc danh sách video của kênh để không đăng trùng một video hai lần.</li>
+    </ul>
+    <p>Công cụ không đọc, không lưu và không chia sẻ dữ liệu của bất kỳ người dùng hay kênh nào khác.
+    Chi tiết ở <a href="privacy.html">Chính sách quyền riêng tư</a>.</p>
+  </div>
+
+  <h2>Liên hệ</h2>
+  <p>Chủ kênh Tiểu My kể chuyện: <a href="mailto:lequangphanan@gmail.com">lequangphanan@gmail.com</a></p>
+
+  <section class="lang" id="en">
+    <h2>English</h2>
+    <p><strong>ytb-pipeline</strong> is a private tool that runs on the personal computer of the owner of the YouTube channel
+    <a href="https://www.youtube.com/@tieumystory">Tiểu My kể chuyện</a> (@tieumystory). It helps the owner produce and publish
+    their own short educational videos (Shorts) and long videos.</p>
+    <p>It is not a public service: there are no user accounts and no servers, and it is used only for the owner's own channel.</p>
+    <p>With the owner's Google sign-in and consent, it uses the <strong>YouTube Data API</strong> to upload videos the owner has
+    approved (with title, description, tags and thumbnail), schedule their release, add Vietnamese captions and one comment by
+    the owner, and list the channel's videos so that no video is uploaded twice. It does not read, store or share data of any
+    other user or channel. See the <a href="privacy.html#en">Privacy Policy</a> and <a href="terms.html#en">Terms of Service</a>.</p>
+    <p>Contact: <a href="mailto:lequangphanan@gmail.com">lequangphanan@gmail.com</a></p>
+  </section>
+
+  <footer>ytb-pipeline · Tiểu My kể chuyện · <a href="privacy.html">Quyền riêng tư / Privacy</a> ·
+  <a href="terms.html">Điều khoản / Terms</a></footer>
+</main>
+</body>
+</html>

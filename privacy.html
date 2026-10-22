@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư – ytb-pipeline</title>
+<meta name="description" content="Chính sách quyền riêng tư của ytb-pipeline, công cụ nội bộ của kênh Tiểu My kể chuyện.">
+<style>
+:root {
+  --bg: #fbf8f3; --card: #ffffff; --ink: #2a2118; --muted: #6b5f52; --line: #e7dfd3; --accent: #b5412b;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1b1714; --card: #24201c; --ink: #f1ebe3; --muted: #b3a797; --line: #3a332c; --accent: #e9846d; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+header { margin-bottom: 28px; }
+header .brand { font-size: 14px; color: var(--muted); letter-spacing: .02em; }
+h1 { font-size: 30px; line-height: 1.25; margin: 6px 0 10px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+h3 { font-size: 16px; margin: 20px 0 4px; }
+p, li { color: var(--ink); }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin: 18px 0; }
+a { color: var(--accent); }
+nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 15px; }
+.lang { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 8px; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+code { font-size: 14px; background: var(--line); padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand"><a href="index.html">ytb-pipeline</a> · Tiểu My kể chuyện</div>
+    <h1>Chính sách quyền riêng tư</h1>
+    <p class="muted">Có hiệu lực từ ngày 22/10/2026 · <a href="#en">English version</a></p>
+  </header>
+
+  <p>Chính sách này mô tả cách <strong>ytb-pipeline</strong> ("công cụ") truy cập, sử dụng, lưu trữ và chia sẻ dữ liệu khi chủ kênh
+  YouTube <a href="https://www.youtube.com/@tieumystory">Tiểu My kể chuyện</a> đăng nhập bằng tài khoản Google.
+  Công cụ chỉ được chủ kênh dùng cho kênh của chính họ, và chạy trên máy tính cá nhân của chủ kênh.</p>
+
+  <h2>1. Dữ liệu công cụ truy cập</h2>
+  <p>Qua YouTube API Services (YouTube Data API), sau khi chủ kênh cho phép, công cụ truy cập:</p>
+  <ul>
+    <li>thông tin cơ bản của kênh đã đăng nhập (mã kênh, tên kênh), để kiểm tra đúng kênh trước khi đăng;</li>
+    <li>danh sách video của kênh (tiêu đề, trạng thái, thời điểm đăng), để không đăng trùng;</li>
+    <li>các video, ảnh bìa, phụ đề và bình luận mà chính chủ kênh tạo ra và chọn đăng.</li>
+  </ul>
+  <p>Công cụ không truy cập dữ liệu của người xem, của người dùng khác hay của kênh khác.</p>
+
+  <h2>2. Cách dữ liệu được sử dụng</h2>
+  <p>Dữ liệu chỉ dùng để thực hiện việc chủ kênh yêu cầu: tải lên và hẹn giờ video, thêm phụ đề và bình luận, và tránh đăng trùng.
+  Dữ liệu không được dùng cho quảng cáo, không dùng để huấn luyện mô hình AI, và không được bán.</p>
+
+  <h2>3. Lưu trữ và bảo vệ</h2>
+  <ul>
+    <li>Token đăng nhập Google (refresh token) được lưu trong Windows Credential Manager trên máy tính của chủ kênh,
+    không gửi đi đâu khác.</li>
+    <li>Thông tin về video đã đăng (mã video, đường dẫn, thời điểm) được lưu trong tệp trên máy của chủ kênh, để quản lý lịch đăng.</li>
+    <li>Công cụ không có máy chủ riêng. Dữ liệu chỉ đi giữa máy tính của chủ kênh và máy chủ của Google, qua kết nối mã hoá HTTPS.</li>
+  </ul>
+
+  <h2>4. Chia sẻ dữ liệu</h2>
+  <p>Công cụ không chia sẻ dữ liệu người dùng Google với bất kỳ bên thứ ba nào. Nội dung video chỉ được gửi lên YouTube khi chủ kênh
+  đã duyệt. Công cụ cũng có thể đăng chính video đó lên Trang Facebook của chủ kênh, nhưng không gửi dữ liệu tài khoản Google
+  sang Facebook.</p>
+
+  <h2>5. Giữ lại và xoá dữ liệu</h2>
+  <ul>
+    <li>Dữ liệu được giữ đến khi chủ kênh xoá. Lệnh <code>python -m pipeline youtube-login --delete</code> xoá token đã lưu.</li>
+    <li>Có thể thu hồi quyền của công cụ bất cứ lúc nào tại
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li>Muốn yêu cầu xoá dữ liệu, gửi email cho địa chỉ liên hệ bên dưới.</li>
+  </ul>
+
+  <h2>6. YouTube và Google</h2>
+  <p>Công cụ sử dụng YouTube API Services. Khi dùng công cụ, bạn đồng ý với
+  <a href="https://www.youtube.com/t/terms">Điều khoản dịch vụ của YouTube</a>. Dữ liệu cũng chịu
+  <a href="https://policies.google.com/privacy">Chính sách quyền riêng tư của Google</a>.</p>
+  <p>Việc công cụ sử dụng và chuyển giao thông tin nhận từ Google API tuân thủ
+  <a href="https://developers.google.com/terms/api-services-user-data-policy">Chính sách dữ liệu người dùng của Google API Services</a>,
+  bao gồm các yêu cầu về Sử dụng giới hạn (Limited Use).</p>
+
+  <h2>7. Thay đổi chính sách</h2>
+  <p>Khi chính sách thay đổi, trang này sẽ được cập nhật kèm ngày hiệu lực mới.</p>
+
+  <h2>8. Liên hệ</h2>
+  <p>Chủ kênh Tiểu My kể chuyện: <a href="mailto:lequangphanan@gmail.com">lequangphanan@gmail.com</a></p>
+
+  <section class="lang" id="en">
+    <h2>Privacy Policy (English)</h2>
+    <p class="muted">Effective 22 October 2026</p>
+    <p>This policy describes how <strong>ytb-pipeline</strong> (the "tool") accesses, uses, stores and shares data when the owner of
+    the YouTube channel <a href="https://www.youtube.com/@tieumystory">Tiểu My kể chuyện</a> signs in with a Google account.
+    The tool is used only by the channel owner, for their own channel, and runs on the owner's personal computer.</p>
+    <h3>Data accessed</h3>
+    <p>Through YouTube API Services (YouTube Data API), with the owner's consent, the tool accesses: basic information about the
+    signed-in channel (channel ID and title) to check it is the right channel; the channel's list of videos (titles, status, publish
+    times) to avoid duplicate uploads; and the videos, thumbnails, captions and comments that the owner creates and chooses to publish.
+    It does not access data of viewers, other users or other channels.</p>
+    <h3>Use</h3>
+    <p>Data is used only to do what the owner asks: upload and schedule videos, add captions and a comment, and avoid duplicates.
+    It is not used for advertising, not used to train AI models, and not sold.</p>
+    <h3>Storage and protection</h3>
+    <p>The Google refresh token is stored in Windows Credential Manager on the owner's computer and is not sent anywhere else. Records
+    of published videos (video IDs, links, times) are kept in files on the owner's computer to manage the posting schedule. The tool
+    has no server; data travels only between the owner's computer and Google's servers over encrypted HTTPS.</p>
+    <h3>Sharing</h3>
+    <p>The tool does not share Google user data with any third party. Video content is sent to YouTube only after the owner approves it.
+    The tool may also post the same video to the owner's Facebook Page, but it does not send Google account data to Facebook.</p>
+    <h3>Retention and deletion</h3>
+    <p>Data is kept until the owner deletes it. <code>python -m pipeline youtube-login --delete</code> removes the stored token. Access
+    can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. To request
+    deletion of data, email the contact below.</p>
+    <h3>YouTube and Google</h3>
+    <p>The tool uses YouTube API Services. By using it you agree to be bound by the
+    <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>; see also the
+    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The tool's use and transfer of information received from
+    Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data
+    Policy</a>, including the Limited Use requirements.</p>
+    <h3>Changes and contact</h3>
+    <p>Changes will be posted on this page with a new effective date. Contact:
+    <a href="mailto:lequangphanan@gmail.com">lequangphanan@gmail.com</a></p>
+  </section>
+
+  <footer><a href="index.html">ytb-pipeline</a> · <a href="terms.html">Điều khoản / Terms</a></footer>
+</main>
+</body>
+</html>
